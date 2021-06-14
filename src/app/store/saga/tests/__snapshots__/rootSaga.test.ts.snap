@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root saga suite should wait for all sagas to be loaded 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": true,
+  "payload": Array [
+    Object {
+      "@@redux-saga/IO": true,
+      "combinator": false,
+      "payload": Object {
+        "args": Array [],
+        "context": null,
+        "detached": true,
+        "fn": [Function],
+      },
+      "type": "FORK",
+    },
+  ],
+  "type": "ALL",
+}
+`;

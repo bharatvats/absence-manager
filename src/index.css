@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body, #root, .loader{
+  height: 100%;
+}
+
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;  
+}
+
+.error svg{
+  margin-right: 5px;
+}
+
+.MuiTableCell-stickyHeader{
+ background-color: #e2e2e2 !important;
+}

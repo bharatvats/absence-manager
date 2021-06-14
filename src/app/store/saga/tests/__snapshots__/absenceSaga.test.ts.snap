@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Absence saga suite getAbsenceList Saga should call getMemberList API and dispatch success action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "absences",
+    ],
+    "context": null,
+    "fn": [MockFunction],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`Absence saga suite getAbsenceList Saga should call getMemberList api and dispatch error action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "absences",
+    ],
+    "context": null,
+    "fn": [MockFunction],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`Absence saga suite getMemberList Saga should call getMemberList API and dispatch success action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "members",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+  "type": "CALL",
+}
+`;
+
+exports[`Absence saga suite getMemberList Saga should call getMemberList api and dispatch error action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "combinator": false,
+  "payload": Object {
+    "args": Array [
+      "members",
+    ],
+    "context": null,
+    "fn": [MockFunction],
+  },
+  "type": "CALL",
+}
+`;
