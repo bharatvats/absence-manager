@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -75,6 +75,11 @@ export default function AbsenceListComponent(props: AbsenceListProps) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage] = React.useState(10);
 
+    useEffect(() => {
+        if (tableRows.length)
+            setPage(0);
+    }, [tableRows]);
+
     const handleChangePage = (_event: unknown, newPage: number) => {
         setPage(newPage);
     };
@@ -121,7 +126,7 @@ export default function AbsenceListComponent(props: AbsenceListProps) {
                 count={tableRows.length}
                 rowsPerPageOptions={[10]}
                 rowsPerPage={rowsPerPage}
-                page={page}
+                page={(page > 0 && tableRows.length <= rowsPerPage) ? 0 : page}
                 onChangePage={handleChangePage}
             />
         </Paper>
