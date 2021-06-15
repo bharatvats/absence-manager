@@ -21,7 +21,7 @@ export default function TypeFilter(props: PeriodFilterProps) {
                     format="MM/dd/yyyy"
                     margin="none"
                     id="date-picker-inline"
-                    label="Select Period"
+                    label="Select Date"
                     value={selectedDate}
                     onChange={handleChangePeriod}
                     KeyboardButtonProps={{

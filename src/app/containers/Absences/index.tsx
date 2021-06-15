@@ -100,6 +100,7 @@ export default function AbsenceEmployee() {
             filterAbsences(filterByType, newDate);
         } else if (!date) {
             filterAbsences(filterByType, null);
+            setSelectedDate(null);
         }
 
     }, [selectedDate, filterByType, localAbsencesList]);
