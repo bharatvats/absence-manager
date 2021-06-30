@@ -7,9 +7,13 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './saga/rootSaga';
 import createRootReducer from './reducers/rootReducer';
 import { isEmpty } from 'lodash';
+
 export const history = createHashHistory();
+
 const rootReducer = createRootReducer(history);
+
 export type RootState = ReturnType<typeof rootReducer>;
+
 const router = routerMiddleware(history);
 const middleware = [...getDefaultMiddleware({ serializableCheck: false }), router];
 const excludeLoggerEnvs = ['test', 'production'];
@@ -26,7 +30,9 @@ if (shouldIncludeLogger) {
 const reduxSagaMonitorOptions = {};
 const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
 middleware.push(sagaMiddleware);
+
 export let store: EnhancedStore;
+
 export const configuredStore = (initialState?: RootState) => {
   if (!isEmpty(store)) {
     return store;

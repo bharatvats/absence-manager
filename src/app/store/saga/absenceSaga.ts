@@ -10,21 +10,33 @@ export default function* rootSaga() {
 }
 
 export function* getMemberList() {
-    const members: MembersResponseType = yield call(getData, 'members');
-    if (members.message === ResponseStatus.SUCCESS) {
-        yield put(setMemberList(members.payload));
-        yield call(getAbsenceList);
-    } else {
+    try {
+        const members: MembersResponseType = yield call(getData, 'members');
+        if (members.message === ResponseStatus.SUCCESS) {
+            yield put(setMemberList(members.payload));
+            yield call(getAbsenceList);
+        } else {
+            yield put(setIsError(true));
+        }
+    } catch (e) {
+        console.error('Error while fetching members', e);
         yield put(setIsError(true));
+        yield put(setIsLoading(false));
     }
 }
 
 export function* getAbsenceList() {
-    const absences: AbsencesResponseType = yield call(getData, 'absences');
-    if (absences.message === ResponseStatus.SUCCESS) {
-        yield put(setAbsenceList(absences.payload));
-    } else {
+    try {
+        const absences: AbsencesResponseType = yield call(getData, 'absences');
+        if (absences.message === ResponseStatus.SUCCESS) {
+            yield put(setAbsenceList(absences.payload));
+        } else {
+            yield put(setIsError(true));
+        }
+    } catch (e) {
+        console.error('Error while fetching Absences', e);
         yield put(setIsError(true));
+    } finally {
+        yield put(setIsLoading(false));
     }
-    yield put(setIsLoading(false));
 }

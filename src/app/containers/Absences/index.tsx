@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -127,7 +128,7 @@ export default function AbsenceEmployee() {
                             Absence Employees
                         </Typography>
                     </Grid>
-                    <Grid item xs={3} >
+                    <Grid item xs={3}>
                         <TypeFilter
                             filterByType={filterByType}
                             handleChangeType={handleChangeType}
